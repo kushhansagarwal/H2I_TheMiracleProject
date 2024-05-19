@@ -42,7 +42,7 @@
 
 	function updateCurrentClass() {
 		const now = new Date();
-		const oneHourLater = new Date(now.getTime() + 60 * 60 * 1000);
+		const oneHourLater = new Date(now.getTime() + 10 * 60 * 60 * 1000);
 
 		currentClass =
 			events.find((event) => {
@@ -74,7 +74,10 @@
 		<span
 			>You have a <span class="font-bold">{currentClass.subject}</span> class in {Math.max(
 				0,
-				Math.floor((currentClass.startTime * 1000 - Date.now()) / 60000)
+				Math.floor((currentClass.startTime * 1000 - Date.now()) / 3600000)
+			)} hours and {Math.max(
+				0,
+				Math.floor(((currentClass.startTime * 1000 - Date.now()) % 3600000) / 60000)
 			)} minutes</span
 		>
 		<a href={currentClass.link} target="_blank" class="btn btn-secondary rounded-xl px-2">

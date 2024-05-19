@@ -114,7 +114,7 @@
 				<div class="divider"></div>
 				<div class="grid grid-cols-3">
 					{#each user.resources as resource}
-						<div class="card w-96 bg-base-100 shadow-xl">
+						<div class="card w-96 bg-base-200 shadow-xl">
 							<div class="card-body">
 								<h2 class="card-title">{resource.title}</h2>
 								<p>{resource.description}</p>
